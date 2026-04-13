@@ -34,7 +34,7 @@ Hermes Agent ←→ lobster-says skill (this repo)
 
 The skill is a thin orchestration layer — all intelligence lives on the backend. This means:
 - **Zero LLM cost** on the skill side
-- **Shared backend** with the [OpenClaw version](https://clawhub.ai/jaredwei01/lobster-says)
+- **Shared backend** with the [OpenClaw version](https://clawhub.ai/surmountwei/lobster-says)
 - Your lobster's personality, memory, and art are fully portable
 
 ## Files
