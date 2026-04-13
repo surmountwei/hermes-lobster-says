@@ -8,7 +8,6 @@
 
 import argparse
 import json
-import subprocess
 import sys
 import uuid
 from datetime import datetime, timezone
@@ -80,11 +79,9 @@ def main():
     api_base = args.api_base.rstrip("/")
     existing = _read_config()
 
-    # ── 自动检测来源平台 ──
-    # Hermes 在 gateway 触发时会设置这些环境变量
-    import os
-    platform = args.platform or os.environ.get("HERMES_SESSION_PLATFORM", "")
-    chat_id = args.chat_id or os.environ.get("HERMES_SESSION_CHAT_ID", "")
+    # 来源平台信息由 SKILL.md 指示 Agent 通过 --platform/--chat-id 传入
+    platform = args.platform or ""
+    chat_id = args.chat_id or ""
 
     # ── 检查是否已有虾 ──
     if existing.get("user_id") and existing.get("access_token"):
