@@ -7,7 +7,7 @@ Your lobster sends you personalized morning/evening messages, AI-generated stick
 ## Install
 
 ```bash
-hermes skills install jaredwei01/hermes-lobster-says
+hermes skills install surmountwei/hermes-lobster-says/lobster-says
 ```
 
 Then tell Hermes: **"I want to adopt a lobster"** (or "我想养一只共情虾").
@@ -40,20 +40,21 @@ The skill is a thin orchestration layer — all intelligence lives on the backen
 ## Files
 
 ```
-├── SKILL.md                    # agentskills.io spec — Hermes reads this
 ├── README.md
 ├── LICENSE
-└── scripts/
-    ├── init_lobster.py         # Create or reuse a lobster + save config
-    ├── push_message.py         # Generate & deliver a scheduled message
-    ├── register_crons.py       # Batch register/rebuild Hermes cron jobs
-    ├── digest_transcript.py    # Digest recent chat history into memory
-    ├── ingest_memory.py        # Inject extracted info into lobster memory
-    ├── get_status.py           # Query lobster status
-    ├── get_memory.py           # View lobster memory
-    ├── get_studio_link.py      # Get a short-lived studio link
-    ├── generate_message.py     # Manually trigger message generation
-    └── update_config.py        # Update push schedule / memory mode
+└── lobster-says/               # Skill directory (Hermes installs this)
+    ├── SKILL.md                # agentskills.io spec — Hermes reads this
+    └── scripts/
+        ├── init_lobster.py     # Create or reuse a lobster + save config
+        ├── push_message.py     # Generate & deliver a scheduled message
+        ├── register_crons.py   # Batch register/rebuild Hermes cron jobs
+        ├── digest_transcript.py# Digest recent chat history into memory
+        ├── ingest_memory.py    # Inject extracted info into lobster memory
+        ├── get_status.py       # Query lobster status
+        ├── get_memory.py       # View lobster memory
+        ├── get_studio_link.py  # Get a short-lived studio link
+        ├── generate_message.py # Manually trigger message generation
+        └── update_config.py    # Update push schedule / memory mode
 ```
 
 ## Requirements
